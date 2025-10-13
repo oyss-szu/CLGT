@@ -16,7 +16,8 @@ We provide a requirements.txt file to ensure compatibility.
 
 ```
 ├── dataset/
-  ├── VIGOR/ 
+  ├── CVUSA-C-ALL/ 
+  ├── CVACT-C-ALL/
   ├── CVUSA/	
   └── CVACT/
 ├─ CLGT
