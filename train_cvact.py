@@ -120,7 +120,7 @@ config = Configuration()
 gmt = time.gmtime()
 ts = calendar.timegm(gmt)
 
-log_name = 'final-11.3-0.1'
+log_name = 'final'
 # save_name = f"{ts}_{config.model}"
 path = os.path.join('log_dir',log_name)
 print("save_name : ", path, flush=True)
@@ -196,7 +196,6 @@ if __name__ == '__main__':
 
     # Model to device
     model = model.to(config.device)
-    # input("模型加载完成")
 
 
     print("\nImage Size Sat:", image_size_sat)
@@ -215,7 +214,7 @@ if __name__ == '__main__':
         img_size_ground,
         mean=mean,
         std=std
-        )  # 训练的测试集根据论文的数据增强分为了Sample4Geo的数据增强和有限视角的数据增强
+        )
 
 
     # Train
@@ -341,14 +340,14 @@ if __name__ == '__main__':
                             )
 
     if config.mixed_precision:
-        scaler = GradScaler(init_scale=2. ** 10)  # 混合精度训练避免梯度下溢
+        scaler = GradScaler(init_scale=2. ** 10)
     else:
         scaler = None
 
     # -----------------------------------------------------------------------------#
     # optimizer                                                                   #
     # -----------------------------------------------------------------------------#
-    lambda_weight = torch.nn.Parameter(torch.tensor(0.75, requires_grad=True).to("cuda"))  # 初始化为 1.0
+    # lambda_weight = torch.nn.Parameter(torch.tensor(0.75, requires_grad=True).to("cuda"))
     if config.decay_exclue_bias:
         param_optimizer = list(model.named_parameters())
         no_decay = ["bias", "LayerNorm.bias"]

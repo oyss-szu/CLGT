@@ -170,7 +170,6 @@ class ContentAwareCFEtransformer(A.ImageOnlyTransform):
         h, w = img.shape[:2]
         img_dct = self.FreCom(img)
 
-        # 构造中心对称 mask
         cx, cy = h // 2, w // 2
         Y, X = np.ogrid[:h, :w]
         radius = np.sqrt((X - cy) ** 2 + (Y - cx) ** 2)

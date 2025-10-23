@@ -84,7 +84,7 @@ class Configuration:
     # Dataset
     data_folder = "../dataset/VIGOR"
 
-    same_area: bool = False  # True: same | False: cross
+    same_area: bool = True  # True: same | False: cross
     if same_area:
         gps_dict_path: str = "../dataset/VIGOR/gps_dict_same.pkl"  # gps_dict_cross.pkl | gps_dict_same.pkl
     else:
@@ -98,7 +98,7 @@ class Configuration:
     prob_flip: float = 0.5  # flipping the sat image and ground images simultaneously
 
     # Savepath for model checkpoints
-    model_path: str = "./vigor_cross"
+    model_path: str = "./vigor_same"
 
     # Eval before training
     zero_shot: bool = False
@@ -127,7 +127,7 @@ class Configuration:
 
 config = Configuration()
 
-log_name = 'final-cross-11.3'
+log_name = 'final'
 # save_name = f"{ts}_{config.model}"
 path = os.path.join('log_dir',log_name)
 print("save_name : ", path, flush=True)
