@@ -1,4 +1,4 @@
-# CVGL: Causal Learning and Geometric Topology
+# CVGL: Causal Learning and Geometric Topology (NeurIPS 2025)
 
 In this repository we present our NeurIPS accepted work: "CVGL: Causal Learning and Geometric Topology" and provide training and inference code. 
 
@@ -23,4 +23,5 @@ We provide a requirements.txt file to ensure compatibility.
 ├─ CLGT
   └──CLGT/
 ```
+
 
